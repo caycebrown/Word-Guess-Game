@@ -2,7 +2,7 @@ var theme = ["Sloth", "Chunk", "Mouth", "Mikey", "Data", "Brad", "Copperpot", "W
 
 var randomNumPick = Math.floor(Math.random(theme)*theme.length); ///generates a random number no larger than the word theme list
 
-var wordPicker = theme[randomNumPick]; ///uses randobly generated number to select a word from an array position
+var wordPicker = theme[randomNumPick]; ///uses randomly generated number to select a word from an array position
 
 var dash = ""; ///creates empty string to be used for blank words
 
@@ -14,12 +14,15 @@ function underScore() {
     dash = dash + '_ '
 
     }
-    var blankWord = document.getElementById("blankword")
-    blankWord.document.write(dash);
+
+    let content = document.getElementById('blankword');
+    content.textContent = dash;
+    alert(content);
+
 };
 
 underScore(); ///calling function -----> Need to update this to be called on button/key press
 
-
+console.log(dash)
 
 alert(dash);
