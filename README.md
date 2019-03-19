@@ -2,10 +2,10 @@
 Homework three word guess game
 
 Things I need to make this work:
-A list of random words (themed) ---> make array of possible words
+A list of random words (themed) ---> make array of possible words       ####
 
-A way to choose random words ----> Math.floor(Math.random(array)*array.length)
-
+A way to choose random words ----> Math.floor(Math.random(array)*array.length)       #####
+ 
 A way to keep the word hidden ---> ??????
 
 A way to have place holder underscores for letter lengths _ ( for x in (word.length???) { print '_ '}
