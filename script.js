@@ -12,14 +12,29 @@ var tries = 10;
 
 
 
-
-
 document.onkeyup = function(event) {
+    inputCode = event.keyCode;
     input = event.key;
+
+    if (inputCode >= 65 && inputCode <= 90) { //Creates a test we can use to append only alphabet inputs to our guesses array
+        validTest = (true);
+
+    }else {
+        validTest = (false);
+    };
+
+    if (validTest === (true)) {
         guesses.push(input);
         tries -= 1;
-        console.log(tries);
+    }else {
+        alert("please enter a letter");
+    }
 };
+
+
+
+
+
 
 
 
