@@ -6,6 +6,23 @@ var wordPicker = theme[randomNumPick]; ///uses randomly generated number to sele
 
 var dash = ""; ///creates empty string to be used for blank words
 
+var guesses = [];
+
+var tries = 10;
+
+
+
+
+
+document.onkeyup = function(event) {
+    input = event.key;
+        guesses.push(input);
+        tries -= 1;
+        console.log(tries);
+};
+
+
+
 ///takes the randomly selected word and creates a string with 1 dash/character
 function underScore() {
     x = 0;
@@ -17,12 +34,9 @@ function underScore() {
 
     let content = document.getElementById('blankword');
     content.textContent = dash;
-    alert(content);
 
 };
 
+
+
 underScore(); ///calling function -----> Need to update this to be called on button/key press
-
-console.log(dash)
-
-alert(dash);
