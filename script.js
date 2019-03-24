@@ -56,6 +56,7 @@ function myFunction() {
 
             if (validTest === (true) && guesses.includes(input) === (false)) {
                 tries -= 1;
+                $('#trievar').text(tries);
                 guesses.push(input);
                 $('#guessBank').append(input + ', ');
         
