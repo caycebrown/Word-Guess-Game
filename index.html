@@ -13,12 +13,14 @@
 <body>
     <container>
         <div class="row" id="header"> 
-
+            <img id="goonies" src="./assets/800x600Goonies.jpg">
         </div> 
-        <div class="row">
-            <div class="col-4"> <!---Fill this column with a nice looking color for the instructions-->
-                <h1>Word Guess Game</h1>
-                <h2>Press Enter to Begin the Game</h2>
+        <div class="row" id="gamerow">
+            <div class="col-3"></div>
+            <div class="col"> <!---Fill this column with a nice looking color for the instructions-->
+                
+                <h1>Goonies Wordguess</h1>
+                <h2>Characters, places,</h2>
                 <h3>Instructions</h3>
                 <p>Guess any letter by entering the proper key on your keyboard. Some other instructions here.</p>
                 <h4 id="wins">Wins:</h4>
@@ -28,13 +30,14 @@
                 <button type="button" class="btn btn-primary" id="resetButton">New Word</button>
             </div>
 
-            <div class="col-8 align-content-center"> <!---This column will contain the actual game-->
+            <div class="col"> <!---This column will contain the actual game-->
                 <h3>Current Word</h3>
                 <h3 id="blankword">Guessword</h3>
                 <h4 id="guesses">Guessed Letters</h4>
                 <p id="guessBank"></p>
 
             </div>
+            <div class="col-1"></div>
         </div>
     </container>
     

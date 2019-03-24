@@ -11,3 +11,23 @@
     float: left;
     margin-right: 15px;
 }
+
+body {
+    background-color: black;
+    color: white;
+}
+
+#header {
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+#goonies {
+    width: 600px;
+    height: 400px;
+}
+
+#gamerow {
+    justify-content: center;
+}
