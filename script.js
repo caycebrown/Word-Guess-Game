@@ -12,15 +12,15 @@ function myFunction() {
 
     var dash = []; //creates empty string to be used for blank words
     
-    var guesses = [];
+    var guesses = []; //bank for guessed letters
     
     var num = Math.floor(Math.random(theme)*theme.length);//generates a random number no larger than the word theme list
     
     var wordPicker = theme[num]; //uses randomly generated number to select a word from an array position
 
-    tries = 8;
+    tries = 8; //countdown to lose parameter
 
-    underScore();
+    underScore();//fills html element with current guess words length in underscores " _ _ _ _ _ "
 
     //creates blank word
     function underScore() {
@@ -38,13 +38,9 @@ function myFunction() {
 
      //This allows us to test for key presses that are alphabetical and add them to the guesses array
     document.onkeyup = function(event) {
-        length = wordPicker.length + 1;
-        word = wordPicker.join(' ');
-        blank = dash.join(' ');
-        if (word === blank) {
-            document.onkeyup = null;
-            return alert('congrats you won!');
-        }else if (tries > 0) {
+
+
+        if (tries > 0) {
 
             inputCode = event.keyCode;
             input = event.key;
@@ -71,12 +67,16 @@ function myFunction() {
                         dash[i] = (input);
                         let content = document.getElementById('blankword');
                         content.textContent = dash.join(' ');
+                        word = wordPicker.join(' ');
+                        blank = dash.join(' ');
 
                     };
                 };
             };
-
-
+            if (word === blank) {
+            document.onkeyup = null;
+            return alert('congrats you won!');
+            };
 
         }else{
             document.onkeyup = null;
