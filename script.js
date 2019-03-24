@@ -9,6 +9,7 @@ $('#resetButton').click(function reset() {
 
 wins = 0
 
+
 function myFunction() {
     var theme = [['s', 'l', 'o', 't','h'],
                  ['c', 'h', 'u', 'n', 'k'], 
@@ -55,6 +56,7 @@ function myFunction() {
 
      //This allows us to test for key presses that are alphabetical and add them to the guesses array
     document.onkeyup = function(event) {
+        $('#gooniesong')[0].play();
         
 
         if (tries >= 1) {
