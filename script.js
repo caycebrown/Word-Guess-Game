@@ -2,6 +2,7 @@ $('#resetButton').click(function reset() {
     dash = [];
     guesses = [];
     $('#guessBank').text(" ");
+    $('#trievar').text(8);
     myFunction();
 });
 
@@ -78,7 +79,8 @@ function myFunction() {
             };
             if (word === blank) {
             document.onkeyup = null;
-            wins = wins++;
+            wins += 1;
+            $('#winvar').text(wins);
             return alert('congrats you won!');
             };
 
