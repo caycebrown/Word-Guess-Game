@@ -2,6 +2,7 @@ $('#resetButton').click(function reset() {
     dash = [];
     guesses = [];
     $('#guessBank').text(" ");
+    $('#trievar').text(8);
     myFunction();
 });
 
@@ -19,6 +20,8 @@ function myFunction() {
     var wordPicker = theme[num]; //uses randomly generated number to select a word from an array position
 
     tries = 8; //countdown to lose parameter
+
+    var wins = 0;
 
     underScore();//fills html element with current guess words length in underscores " _ _ _ _ _ "
 
@@ -54,6 +57,7 @@ function myFunction() {
 
             if (validTest === (true) && guesses.includes(input) === (false)) {
                 tries -= 1;
+                $('#trievar').text(tries);
                 guesses.push(input);
                 $('#guessBank').append(input + ', ');
         
@@ -75,6 +79,8 @@ function myFunction() {
             };
             if (word === blank) {
             document.onkeyup = null;
+            wins += 1;
+            $('#winvar').text(wins);
             return alert('congrats you won!');
             };
 
