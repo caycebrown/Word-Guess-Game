@@ -1,3 +1,13 @@
 #blankword {
     letter-spacing: 5px;
 }
+
+#wins {
+    float: left;
+    margin-right: 15px;
+}
+
+#losses {
+    float: left;
+    margin-right: 15px;
+}
