@@ -57,7 +57,7 @@ function myFunction() {
     document.onkeyup = function(event) {
         
 
-        if (tries > 0) {
+        if (tries >= 1) {
 
             inputCode = event.keyCode;
             input = event.key;
