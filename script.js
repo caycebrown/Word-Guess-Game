@@ -1,6 +1,7 @@
 $('#resetButton').click(function reset() {
     dash = [];
     guesses = [];
+    blank = null;
     $('#guessBank').text(" ");
     $('#trievar').text(8);
     myFunction();
@@ -9,7 +10,19 @@ $('#resetButton').click(function reset() {
 
 
 function myFunction() {
-    var theme = [['s', 'l', 'o', 't','h'], ['c', 'h', 'u', 'n', 'k'], ['m', 'o', 'u', 't', 'h'], ['m', 'i', 'k', 'e', 'y'], ['d', 'a', 't', 'a']]; //word bank
+    var theme = [['s', 'l', 'o', 't','h'],
+                 ['c', 'h', 'u', 'n', 'k'], 
+                 ['m', 'o', 'u', 't', 'h'], 
+                 ['m', 'i', 'k', 'e', 'y'], 
+                 ['d', 'a', 't', 'a'],
+                 ['c','o','p','p','e','r','p','o','t'],
+                 ['f','r','a','t','e','l','l','i'],
+                 ['b','o','o','t','y','t','r','a','p','s'],
+                 ['w','i','l','l','y'],
+                 ['i','n','f','e','r','n','o'],
+                 ['g','o','o','n','d','o','c','k','s'],
+                 ['t','r','u','f','f','l','e','s','h','u','f','f','l','e']
+                 ['b','a','b','y','r','u','t','h']]; //word bank
 
     var dash = []; //creates empty string to be used for blank words
     
@@ -19,9 +32,9 @@ function myFunction() {
     
     var wordPicker = theme[num]; //uses randomly generated number to select a word from an array position
 
-    tries = 8; //countdown to lose parameter
+    tries = 12; //countdown to lose parameter
 
-    var wins = 0;
+    var wins = 0; //!!!!!!!!!!!!! Need to move this variable to avoid being reset everytime myFunction is called.
 
     underScore();//fills html element with current guess words length in underscores " _ _ _ _ _ "
 
@@ -79,7 +92,7 @@ function myFunction() {
             };
             if (word === blank) {
             document.onkeyup = null;
-            wins += 1;
+            wins = wins + 1;
             $('#winvar').text(wins);
             return alert('congrats you won!');
             };
