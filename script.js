@@ -20,6 +20,8 @@ function myFunction() {
 
     tries = 8; //countdown to lose parameter
 
+    var wins = 0;
+
     underScore();//fills html element with current guess words length in underscores " _ _ _ _ _ "
 
     //creates blank word
@@ -75,6 +77,7 @@ function myFunction() {
             };
             if (word === blank) {
             document.onkeyup = null;
+            wins = wins++;
             return alert('congrats you won!');
             };
 
