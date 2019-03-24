@@ -3,11 +3,11 @@ $('#resetButton').click(function reset() {
     guesses = [];
     blank = null;
     $('#guessBank').text(" ");
-    $('#trievar').text(8);
+    $('#trievar').text(12);
     myFunction();
 });
 
-
+wins = 0
 
 function myFunction() {
     var theme = [['s', 'l', 'o', 't','h'],
@@ -21,7 +21,7 @@ function myFunction() {
                  ['w','i','l','l','y'],
                  ['i','n','f','e','r','n','o'],
                  ['g','o','o','n','d','o','c','k','s'],
-                 ['t','r','u','f','f','l','e','s','h','u','f','f','l','e']
+                 ['t','r','u','f','f','l','e','s','h','u','f','f','l','e'],
                  ['b','a','b','y','r','u','t','h']]; //word bank
 
     var dash = []; //creates empty string to be used for blank words
@@ -34,7 +34,7 @@ function myFunction() {
 
     tries = 12; //countdown to lose parameter
 
-    var wins = 0; //!!!!!!!!!!!!! Need to move this variable to avoid being reset everytime myFunction is called.
+     //!!!!!!!!!!!!! Need to move this variable to avoid being reset everytime myFunction is called.
 
     underScore();//fills html element with current guess words length in underscores " _ _ _ _ _ "
 
@@ -52,9 +52,10 @@ function myFunction() {
 
     };
 
+
      //This allows us to test for key presses that are alphabetical and add them to the guesses array
     document.onkeyup = function(event) {
-
+        
 
         if (tries > 0) {
 
@@ -90,14 +91,17 @@ function myFunction() {
                     };
                 };
             };
+
             if (word === blank) {
-            document.onkeyup = null;
-            wins = wins + 1;
-            $('#winvar').text(wins);
-            return alert('congrats you won!');
+                document.onkeyup = null;
+                wins = wins + 1;
+                $('#winvar').text(wins);
+                return alert('Congrats you won!');
+
+            }else{ //do nothing
             };
 
-        }else{
+        }else {
             document.onkeyup = null;
             return alert("You Lost");
 
